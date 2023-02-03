@@ -52,6 +52,32 @@ public class Main {
         }
     }
 
+    public static void ModificarContacto (TelefonoMovil Javier){
+        Scanner sc5= new Scanner(System.in);
+        Scanner sc6= new Scanner(System.in);
+        Scanner sc7= new Scanner(System.in);
+
+        Contactos Modificacion;
+
+        String nueNombre;
+        String nueNumero;
+        System.out.println("Dime el nombre del contacto que quieres modificar");
+        String op = sc5.nextLine();
+        System.out.println("Dime el nuevo Nombre");
+        nueNombre = sc6.nextLine();
+        System.out.println("Dime el nuevo número");
+        nueNumero = sc7.nextLine();
+        Modificacion = new Contactos(nueNombre , nueNumero);
+
+        if (Javier.updateContact(Javier.querryContact(op) , Modificacion)){
+            System.out.println("Se ha actualizado Correctamente");
+        }
+        else {
+            System.out.println("No se ha actualizado ");
+        }
+
+    }
+
     public static void encontrarContacto (TelefonoMovil Javi){
         Scanner sc9 = new Scanner(System.in);
         System.out.println("Dime el nombre del Contacto que quieres encontrar");
@@ -91,29 +117,7 @@ public class Main {
                     AnyadirContacto(Javier);
                     break;
                 case 3:
-                    Scanner sc5= new Scanner(System.in);
-                    Scanner sc6= new Scanner(System.in);
-                    Scanner sc7= new Scanner(System.in);
-
-                    Contactos Modificacion;
-
-                    String nueNombre;
-                    String nueNumero;
-                    System.out.println("Dime el nombre del contacto que quieres modificar");
-                    String op = sc5.nextLine();
-                    System.out.println("Dime el nuevo Nombre");
-                    nueNombre = sc6.nextLine();
-                    System.out.println("Dime el nuevo número");
-                    nueNumero = sc7.nextLine();
-                        Modificacion = new Contactos(nueNombre , nueNumero);
-
-                    if (Javier.updateContact(Javier.querryContact(op) , Modificacion)){
-                        System.out.println("Se ha actualizado Correctamente");
-                    }
-                    else {
-                        System.out.println("No se ha actualizado ");
-                    }
-
+                   ModificarContacto(Javier);
 
                     break;
                 case 4:

@@ -95,7 +95,7 @@ else {
     public void printContacts (){
         System.out.println("Lista de Contactos:");
         for (int i=0; i<myContacts.size(); i++){
-            System.out.println( i + "." + myContacts.get(i).getName() + " " + myContacts.get(i).getPhoneNumber());
+            System.out.println( (i +1)+ "." + myContacts.get(i).getName() + " " + myContacts.get(i).getPhoneNumber());
 
         }
 
